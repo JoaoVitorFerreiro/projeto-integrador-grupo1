@@ -11,7 +11,7 @@ import com.projeto.banco.model.Produto;
 import com.projeto.banco.service.ProdutoService;
 
 @RestController
-@RequestMapping("/produtos")
+@RequestMapping("/api/produtos")
 public class ProdutoController {
 
     private final ProdutoService produtoService;

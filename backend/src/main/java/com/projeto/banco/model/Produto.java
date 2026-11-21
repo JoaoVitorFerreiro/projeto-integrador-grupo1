@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Set;
 
 import jakarta.persistence.CascadeType;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -78,6 +79,7 @@ public class Produto {
     )
     private List<EstoqueFilial> estoquesPorFilial = new ArrayList<>();
 
+    @JsonCreator(mode = JsonCreator.Mode.DISABLED)
     public Produto(
             String nomeProduto,
             CategoriaProduto categoria,

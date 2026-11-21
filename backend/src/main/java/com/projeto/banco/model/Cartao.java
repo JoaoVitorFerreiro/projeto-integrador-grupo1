@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -31,7 +32,8 @@ public class Cartao {
     @Column(nullable = false)
     private String nome;
 
-    @Column(nullable = false)
+    /** O CVC nao pode ser armazenado (PCI): aceito na entrada, nunca persistido nem devolvido. */
+    @Transient
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String cvc;
 

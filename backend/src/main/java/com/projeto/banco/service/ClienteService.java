@@ -1,22 +1,31 @@
 package com.projeto.banco.service;
 
-import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
+
+import com.projeto.banco.model.ClienteFisica;
+import com.projeto.banco.repository.ClienteFisicaRepository;
 
 @Service
 public class ClienteService {
 
-    public String cadastrar(String nome, String senha, String email, String endereco, String contato) {
-        return "Cliente cadastrado: " + nome;
+    private final ClienteFisicaRepository repository;
+
+    public ClienteService(ClienteFisicaRepository repository) {
+        this.repository = repository;
     }
 
-    public List<String> listar() {
-        return Collections.emptyList();
+    public ClienteFisica cadastrar(ClienteFisica cliente) {
+        return repository.save(cliente);
     }
 
-    public String buscarPorId(Long id) {
-        return "Cliente " + id;
+    public List<ClienteFisica> listar() {
+        return repository.findAll();
+    }
+
+    public Optional<ClienteFisica> buscarPorId(Long id) {
+        return repository.findById(id);
     }
 }
