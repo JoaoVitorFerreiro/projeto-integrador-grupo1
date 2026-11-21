@@ -1,5 +1,6 @@
 package com.projeto.banco.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -31,6 +32,7 @@ public class Cartao {
     private String nome;
 
     @Column(nullable = false)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String cvc;
 
     @Column(nullable = false)

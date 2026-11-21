@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -45,6 +46,7 @@ public class CampanhaSazonal {
     @Column(nullable = false)
     private Boolean ativa = true;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "campanhasSazonais")
     private Set<Produto> produtos = new HashSet<>();
 
