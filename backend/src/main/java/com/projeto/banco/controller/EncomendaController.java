@@ -1,12 +1,12 @@
 
-package com.projeto.banco.Controller;
+package com.projeto.banco.controller;
 
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.projeto.banco.Service.EncomendaService;
+import com.projeto.banco.service.EncomendaService;
 import com.projeto.banco.model.Encomenda;
 
 @RestController

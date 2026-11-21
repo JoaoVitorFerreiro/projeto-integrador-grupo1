@@ -1,4 +1,4 @@
-package com.projeto.banco.Repository;
+package com.projeto.banco.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
