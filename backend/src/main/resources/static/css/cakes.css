@@ -1,0 +1,41 @@
+/* Monte seu bolo — ateliê (visual portado do app original) */
+.cake-page .builder-layout{display:grid;grid-template-columns:minmax(340px,.75fr) minmax(0,1.25fr);gap:0;align-items:start}
+.cake-page .builder-controls{padding:8px 32px 24px 0;max-height:820px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.builder-tools{display:flex;gap:6px}
+.builder-section{margin-bottom:14px}
+.builder-section h3{font:500 15px/1.2 var(--serif,serif);display:flex;align-items:baseline;gap:8px;margin:0 0 8px}
+.builder-section h3 small{font:400 10px var(--sans,inherit);color:var(--soft-ink)}
+.pill-row{display:flex;flex-wrap:wrap;gap:8px}
+.pill{display:inline-flex;align-items:center;gap:8px;border-radius:9999px;border:1px solid color-mix(in oklab,var(--ink) 18%,transparent);background:transparent;color:var(--ink);padding:8px 18px;font-size:13px;line-height:1.2;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.pill.small{padding:6px 14px;font-size:12px}
+.pill:hover:not(:disabled){border-color:var(--red)}
+.pill.is-on,.pill[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.pill:disabled{opacity:.4;cursor:not-allowed}
+.swatch{display:inline-block;width:14px;height:14px;border-radius:50%;border:2px solid var(--white);box-shadow:0 0 0 1px var(--line)}
+.swatch-vanilla{background:#efe3c8}.swatch-chocolate{background:#5a3a2a}.swatch-rose{background:#eab9b9}
+.swatch-naked{background:linear-gradient(180deg,#efe3c8 0 30%,#d9c9a8 30% 45%,#efe3c8 45% 70%,#d9c9a8 70%)}
+.cake-studio{position:sticky;top:94px;padding:0 12px 16px;text-align:center;overflow:hidden}
+.cake-studio .studio-heading,.cake-studio .studio-specs{display:none}
+.cake-stage{width:100%;aspect-ratio:1;position:relative;display:grid;place-items:center}
+.cake-composition{width:93%;position:relative;transition:width .45s ease}
+.cake-size-15 .cake-composition{width:78%}.cake-size-25 .cake-composition{width:100%}
+.cake-render{width:100%;height:auto;filter:drop-shadow(0 20px 18px rgba(80,50,40,.14));transition:opacity .15s ease,transform .3s ease;animation:cakeIn .45s ease-out}
+.cake-render.is-swapping{opacity:0;transform:scale(.985)}
+@keyframes cakeIn{from{opacity:.0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.cake-measure{position:absolute;bottom:0;left:18%;width:64%;display:flex;align-items:center;gap:12px;color:var(--soft-ink);font-size:10px}
+.cake-measure>span{flex:1;border-top:1px dotted var(--soft-ink);opacity:.45}
+.cake-measure p{margin:0}
+.cake-height{position:absolute;right:0;top:30%;height:42%;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:9px;color:var(--soft-ink);writing-mode:vertical-rl}
+.cake-height span{flex:1;border-left:1px dotted var(--soft-ink);opacity:.4}
+.studio-note{font-size:11px;color:var(--soft-ink);margin:6px 0 0}
+.studio-caption{margin-top:8px}.studio-caption .eyebrow{display:none}
+.studio-caption h2{font-size:44px;line-height:1.05;margin:0}
+.studio-caption p{font-size:14px;color:var(--soft-ink);margin:8px 0 0;letter-spacing:.04em}
+.cake-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px;margin-top:20px}
+.gallery-filters{margin-top:14px}
+.model-card{display:flex;flex-direction:column;gap:4px;text-align:left;border:1px solid var(--line);background:var(--white);border-radius:16px;padding:10px;cursor:pointer;transition:border-color .2s,transform .2s,box-shadow .2s}
+.model-card:hover{border-color:var(--red);transform:translateY(-2px);box-shadow:0 10px 22px rgba(80,50,40,.1)}
+.model-card img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;background:var(--sand)}
+.model-card span{font-weight:600;font-size:13px;margin-top:6px}.model-card small{color:var(--soft-ink);font-size:11px}.model-card b{color:var(--red);font-size:13px;margin-top:2px}
+@media(max-width:1000px){.cake-page .builder-layout{grid-template-columns:minmax(300px,1fr) minmax(0,1fr)}}
+@media(max-width:760px){.cake-page .builder-layout{display:flex;flex-direction:column}.cake-page .builder-controls{max-height:none;padding-right:0}.builder-preview{order:-1}.cake-studio{position:static}.studio-caption h2{font-size:32px}.cake-gallery{grid-template-columns:repeat(2,1fr)}}

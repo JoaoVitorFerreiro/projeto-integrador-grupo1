@@ -5,4 +5,5 @@ import com.projeto.banco.model.ClienteFisica;
 
 public interface ClienteFisicaRepository
         extends JpaRepository<ClienteFisica, Long> {
+    boolean existsByCpf(String cpf);
 }

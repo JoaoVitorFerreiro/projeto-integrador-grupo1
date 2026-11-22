@@ -1,5 +1,6 @@
 package com.projeto.banco.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -30,8 +31,14 @@ public class Cliente {
     private String nome;
 
     private String endereco;
+    @Column(unique = true, length = 120)
     private String email;
     private String contato;
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private String senha;
+    private String senha; // DESCONTINUADO: nunca gravado em texto puro (ver senhaHash)
+
+    /** Hash BCrypt da senha. Nunca serializado nem aceito via JSON. */
+    @JsonIgnore
+    @Column(name = "senha_hash", length = 100)
+    private String senhaHash;
 }

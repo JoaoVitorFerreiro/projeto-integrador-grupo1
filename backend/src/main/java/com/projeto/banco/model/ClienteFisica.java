@@ -1,5 +1,6 @@
 package com.projeto.banco.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -19,6 +20,7 @@ public class ClienteFisica extends Cliente {
     @Column(nullable = false, unique = true, length = 14)
     private String cpf;
 
+    @JsonCreator(mode = JsonCreator.Mode.DISABLED)
     public ClienteFisica(String nome, String cpf, String endereco, String email, String contato, String senha) {
         setNome(nome);
         setEndereco(endereco);

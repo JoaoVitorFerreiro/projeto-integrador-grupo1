@@ -1,0 +1,46 @@
+/* Paineis dos perfis de teste (cupons, estoque, catalogo, campanhas) */
+.platform-panel.demo-coupons,.platform-panel.demo-stock,.platform-panel.demo-catalog{margin-top:24px}
+.panel-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px}
+.panel-tools{display:flex;flex-wrap:wrap;gap:12px}
+.button.small{padding:7px 14px;font-size:12px}
+.coupon-wallet{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:14px}
+.coupon-ticket{border:1.5px dashed var(--red);border-radius:14px;padding:16px;background:var(--white);display:flex;flex-direction:column;gap:4px}
+.coupon-ticket strong{font-size:20px;letter-spacing:.08em;color:var(--red)}
+.coupon-ticket span{font-weight:600}.coupon-ticket small{color:var(--soft-ink)}
+.coupon-ticket.is-off{opacity:.55;border-color:var(--line)}
+.coupon-form{margin-top:16px;align-items:end}
+.coupon-list{margin-top:16px;border-top:1px solid var(--line)}
+.coupon-row-item{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.coupon-row-item strong{min-width:130px;letter-spacing:.06em}
+.coupon-row-item .give{display:flex;gap:8px;margin-left:auto}
+.coupon-row-item select{padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--white)}
+.pill-status{font-size:11px;padding:3px 10px;border-radius:99px;background:var(--sand)}
+.pill-status.on{background:#e6efdc;color:var(--olive)}
+.stock-rows,.admin-products{margin-top:14px;border-top:1px solid var(--line)}
+.stock-row{display:grid;grid-template-columns:48px minmax(160px,1.4fr) 150px 110px auto;align-items:end;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.stock-row img,.admin-product img{border-radius:8px;object-fit:cover}
+.stock-row[hidden],.admin-product[hidden]{display:none}
+.stock-row .who,.admin-product .who{display:flex;flex-direction:column;gap:2px}
+.who small{color:var(--soft-ink);font-size:12px}
+.admin-product{display:grid;grid-template-columns:minmax(220px,1.1fr) 2fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.admin-product .who{flex-direction:row;align-items:center;gap:12px}.admin-product .who span{display:flex;flex-direction:column;gap:3px}
+.admin-product .fields{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:end}
+.admin-product .actions,.campaign-form .actions{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px}
+.campaigns-block{margin-top:34px;border-top:1px solid var(--line);padding-top:22px}
+.campaign-form{margin-top:16px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--white);align-items:end}
+.campaign-form .check{display:flex;align-items:center;gap:8px}
+.campaign-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.campaign-row small{display:block;color:var(--soft-ink);margin-top:4px}
+.campaign-row .actions{display:flex;gap:8px}
+.demo-order-detail{margin-top:16px;border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--white)}
+.order-line img{border-radius:8px;object-fit:cover;flex:none}
+.stock-notice.low{color:var(--red)}
+.chat-messages.compact{max-height:220px;overflow:auto;margin-top:14px}
+@media(max-width:900px){.stock-row{grid-template-columns:48px 1fr}.stock-row .field-label,.stock-row button{grid-column:1/-1}.admin-product{grid-template-columns:1fr}.admin-product .fields{grid-template-columns:repeat(2,1fr)}}
+/* Cadastro / perfil de conta real */
+.signup-extra{display:grid;gap:14px}
+.signup-extra[hidden]{display:none}
+.profile-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:16px 0}
+.profile-list dt{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft-ink)}
+.profile-list dd{margin:4px 0 0;font-weight:600}
+.form-message.error-text{color:#b3261e}
